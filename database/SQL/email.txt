@@ -1,0 +1,7 @@
+CREATE TABLE email( 
+	provider_id INT UNSIGNED, 
+	email_id INT UNSIGNED AUTO_INCREMENT, 
+	email VARCHAR(128) NOT NULL, 
+	CONSTRAINT pk_email PRIMARY KEY(email_id, provider_id), 
+	CONSTRAINT fk_provider_email FOREIGN KEY(provider_id) REFERENCES provider(provider_id) 
+);

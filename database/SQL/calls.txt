@@ -1,0 +1,7 @@
+CREATE TABLE calls( 
+	address_id INT UNSIGNED, 
+	phone_id INT UNSIGNED, 
+	CONSTRAINT pk_addressPhone PRIMARY KEY(address_id, phone_id), 
+	CONSTRAINT fk_ap_address FOREIGN KEY(address_id) REFERENCES address(address_id), 
+	CONSTRAINT fk_ap_phone FOREIGN KEY(phone_id) REFERENCES phone(phone_id) 
+);

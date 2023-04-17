@@ -1,0 +1,10 @@
+CREATE TABLE address( 
+	provider_id INT UNSIGNED, 
+	city_id INT UNSIGNED, 
+	address_id INT UNSIGNED AUTO_INCREMENT, 
+	address VARCHAR(128) NOT NULL, 
+	gm_location VARCHAR(256),  
+	CONSTRAINT pk_address PRIMARY KEY( address_id, provider_id, city_id), 
+	CONSTRAINT fk_provider_address FOREIGN KEY(provider_id) REFERENCES provider(provider_id), 
+	CONSTRAINT fk_city_address FOREIGN KEY(city_id) REFERENCES city(city_id) 
+);

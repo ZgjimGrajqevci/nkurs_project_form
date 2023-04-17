@@ -1,0 +1,7 @@
+CREATE TABLE phone(
+	provider_id INT UNSIGNED,
+	phone_id INT UNSIGNED AUTO_INCREMENT,
+	phone_number VARCHAR(32) NOT NULL,
+	CONSTRAINT pk_phone PRIMARY KEY( phone_id, provider_id),
+	CONSTRAINT fk_provider_phone FOREIGN KEY( provider_id) REFERENCES provider(provider_id)
+);

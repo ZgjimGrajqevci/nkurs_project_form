@@ -1,0 +1,7 @@
+CREATE TABLE located( 
+	course_id INT UNSIGNED, 
+	address_id INT UNSIGNED, 
+	CONSTRAINT pk_courseAddress PRIMARY KEY(course_id, address_id), 
+	CONSTRAINT fk_ca_course FOREIGN KEY(course_id) REFERENCES course(course_id),
+	CONSTRAINT fk_ca_address FOREIGN KEY(address_id) REFERENCES address(address_id)
+);

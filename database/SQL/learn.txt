@@ -1,0 +1,7 @@
+CREATE TABLE learn( 
+	course_id INT UNSIGNED, 
+	learn_id INT UNSIGNED AUTO_INCREMENT,
+	learn VARCHAR(256) NOT NULL,
+	CONSTRAINT pk_lean PRIMARY KEY(learn_id, course_id), 
+	CONSTRAINT fk_course_lean FOREIGN KEY(course_id) REFERENCES course(course_id) 
+);

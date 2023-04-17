@@ -1,0 +1,7 @@
+CREATE TABLE contact( 
+	city_id INT UNSIGNED, 
+	email_id INT UNSIGNED, 
+	CONSTRAINT pk_cityEmail PRIMARY KEY(city_id, email_id), 
+	CONSTRAINT fk_ce_city FOREIGN KEY(city_id) REFERENCES city(city_id), 
+	CONSTRAINT fk_ce_email FOREIGN KEY(email_id) REFERENCES email(email_id) 
+);

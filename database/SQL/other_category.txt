@@ -1,0 +1,6 @@
+ CREATE TABLE other_category( 
+ course_id INT UNSIGNED,
+ other_category_id INT UNSIGNED AUTO_INCREMENT, other_category_name VARCHAR(512) NOT NULL, 
+ CONSTRAINT pk_other_category PRIMARY KEY(other_category_id),
+ CONSTRAINT fk_oc_course FOREIGN KEY(course_id) REFERENCES  course(course_id) 
+ );

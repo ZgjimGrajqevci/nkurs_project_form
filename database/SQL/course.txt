@@ -1,0 +1,11 @@
+CREATE TABLE course( 
+	provider_id INT UNSIGNED,
+	course_id INT UNSIGNED AUTO_INCREMENT, 
+	course_name VARCHAR(128), 
+	image_path VARCHAR(128), 
+	online_status ENUM('on','off') DEFAULT 'on', 
+	info TEXT, 
+	course_status ENUM('on','off','both') DEFAULT 'off',
+	CONSTRAINT pk_course PRIMARY KEY(course_id),  
+	CONSTRAINT fk_provider_course FOREIGN KEY(provider_id) REFERENCES provider(provider_id)  
+);

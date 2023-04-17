@@ -1,0 +1,7 @@
+CREATE TABLE requirement( 
+	course_id INT UNSIGNED, 
+	requirement_id INT UNSIGNED AUTO_INCREMENT, 
+	requirement VARCHAR(128) NOT NULL, 
+	CONSTRAINT pk_requirement PRIMARY KEY( requirement_id, course_id), 
+	CONSTRAINT fk_course_requirement FOREIGN KEY(course_id) REFERENCES course(course_id) 
+);

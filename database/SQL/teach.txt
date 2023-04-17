@@ -1,0 +1,8 @@
+CREATE TABLE teach(  
+	category_id INT UNSIGNED,  
+	course_id INT UNSIGNED,
+	main_category ENUM('y','n') DEFAULT 'n', 
+	CONSTRAINT pk_categoryCourse PRIMARY KEY(category_id, course_id),  
+	CONSTRAINT fk_cc_category FOREIGN KEY(category_id) REFERENCES category(category_id),  
+	CONSTRAINT fk_cc_course FOREIGN KEY(course_id) REFERENCES course(course_id)
+);

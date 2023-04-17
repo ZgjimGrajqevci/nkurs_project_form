@@ -1,0 +1,7 @@
+CREATE TABLE picture( 
+	provider_id INT UNSIGNED, 
+	picture_id INT UNSIGNED AUTO_INCREMENT, 
+	picture_path VARCHAR(128) NOT NULL, 
+	CONSTRAINT pk_picture PRIMARY KEY( picture_id, provider_id), 
+	CONSTRAINT fk_provider_picture FOREIGN KEY(provider_id) REFERENCES provider(provider_id) 
+);

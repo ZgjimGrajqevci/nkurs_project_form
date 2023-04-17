@@ -1,0 +1,9 @@
+CREATE TABLE category( 
+	category_id INT UNSIGNED AUTO_INCREMENT, 
+	category_name VARCHAR(64) NOT NULL, 
+	category_status ENUM('y','n') NOT NULL DEFAULT 'n', 
+	parent_category_id INT UNSIGNED, 
+	CONSTRAINT pk_category PRIMARY KEY(category_id), 
+	CONSTRAINT fk_parent_category FOREIGN KEY(parent_category_id)
+	REFERENCES category(category_id) 
+);

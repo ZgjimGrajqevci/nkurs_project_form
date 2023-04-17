@@ -1,0 +1,13 @@
+CREATE TABLE price( course_id INT UNSIGNED, 
+	price_id INT UNSIGNED AUTO_INCREMENT,
+	price_amount INT UNSIGNED, 
+	price_type ENUM('h','d','m','a'), 
+	intensity INT UNSIGNED, 
+	duration INT UNSIGNED, 
+	duration_type ENUM('h','d','w','m'), 
+	group_max INT UNSIGNED, 
+	group_min INT UNSIGNED, 
+	format ENUM('on','off','both'), 
+	CONSTRAINT pk_price PRIMARY KEY( price_id, course_id),  
+	CONSTRAINT fk_course_price FOREIGN KEY(course_id) REFERENCES course(course_id) 
+);
